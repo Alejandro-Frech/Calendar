@@ -3,15 +3,20 @@
     document.getElementById('btnSubmit').onclick = createCalendar;
 
     function createCalendar() {
-     
-        let startDate = document.getElementById('startDate').value;
+        document.getElementById('calendar').innerHTML = '';
+        let dateParts = document.getElementById('startDate').value.split('-');
         let days = document.getElementById('days').value;
         let countryCode = document.getElementById('countryCode').value;
 
-        console.log(startDate);
-        console.log(days);
-        console.log(countryCode);
+        let startDate = new Date(dateParts[0],dateParts[1]-1,dateParts[2]);
+        let endDate = new Date(startDate.getTime() + (days*24*60*60*1000));
+        BuildCalendars(startDate,endDate);
     
     };
 
 })();
+
+function BuildCalendars(beginDate , endDate){
+    console.log(beginDate);
+    console.log(endDate);
+}
