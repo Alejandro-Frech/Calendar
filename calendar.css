@@ -1,0 +1,12 @@
+.holiday {
+    background-color: blue;
+}
+.weekend {
+    background-color: yellow;
+}
+.weekday {
+    background-color: green;
+}
+.invalid {
+    background-color: grey;
+}
